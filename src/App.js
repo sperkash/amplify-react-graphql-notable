@@ -30,7 +30,7 @@ const App = ({ signOut }) => {
         await Promise.all(
             notesFromAPI.map(async (note) => {
                 if (note.image) {
-                    const url = await Storage.get(note.image);
+                    const url = await Storage.get(note.name);
                     note.image = url;
                 }
                 return note;
@@ -42,6 +42,7 @@ const App = ({ signOut }) => {
     async function createNote(event) {
         event.preventDefault();
         const form = new FormData(event.target);
+        const image = form.get("image");
         const data = {
             name: form.get("name"),
             description: form.get("description"),
@@ -110,11 +111,13 @@ const App = ({ signOut }) => {
                         <Text as="strong" fontWeight={700}>
                             {note.name}
                         </Text>
-                        <Text as="span">{note.description}</Text>
+                        <Text as="span">
+                            {note.description}
+                        </Text>
                         {note.image && (
                             <Image
                                 src={note.image}
-                                alt={'visual aid for ${note.name}'}
+                                alt={`visual aid for ${notes.name}`}
                                 style={{ width: 400 }}
                             />
                         )}
