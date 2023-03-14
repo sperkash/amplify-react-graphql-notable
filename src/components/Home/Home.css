@@ -1,0 +1,38 @@
+body{
+    overflow: hidden;
+}
+.download-button{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    text-decoration: underline;
+    font-weight: bold;
+    color: #2D8CFF;
+  }
+
+  .download-button:hover {
+    color: #0065e1;
+  }
+
+.search-table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 90%;
+    align-items: center;
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: center; 
+    vertical-align: middle;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #F4F5F9;
+  }

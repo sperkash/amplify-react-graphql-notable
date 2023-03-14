@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
+import Upload from './components/Upload/Upload';
 import { API, Storage } from "aws-amplify";
 import {
     Button,
